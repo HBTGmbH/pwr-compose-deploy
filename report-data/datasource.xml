@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<profil>
+    <name>Max Mustermann</name>
+    <bildUrl>/var/pwr/images/dummyAvatar.png</bildUrl>
+    <kurztext>Das ist der Kurztext der einen kurzen Überblick über den Berater gibt. </kurztext>
+    <personalie>
+        <jahrgang>1965</jahrgang>
+    </personalie>
+    <qualifikationen>
+        <bezeichnung>
+            <hauptbegriff>
+                <bezeichnung>Eine tolle Qualifikaton</bezeichnung>
+            </hauptbegriff>
+        </bezeichnung>
+        <datum>
+            <tag>31</tag>
+            <monat>3</monat>
+            <jahr>2017</jahr>
+        </datum>
+    </qualifikationen>
+    <branchen>
+        <bezeichnung>
+            <hauptbegriff>
+                <bezeichnung>Branche 1</bezeichnung>
+            </hauptbegriff>
+        </bezeichnung>
+    </branchen>
+    <sprachen>
+        <sprache>Sprache 1</sprache>
+        <niveau>NATIVE</niveau>
+    </sprachen>
+    <werdegang>
+        <beschreibung>Universität Abschluss</beschreibung>
+        <ausbildung>
+            <bezeichnung>
+                <hauptbegriff>
+                    <bezeichnung>Studiengang</bezeichnung>
+                </hauptbegriff>
+            </bezeichnung>
+            <abschluss>
+                <hauptbegriff>
+                    <bezeichnung>Master</bezeichnung>
+                </hauptbegriff>
+            </abschluss>
+            <zeitraum>
+                <von>
+                    <tag>30</tag>
+                    <monat>9</monat>
+                    <jahr>1980</jahr>
+                </von>
+                <bis>
+                    <tag>16</tag>
+                    <monat>6</monat>
+                    <jahr>1983</jahr>
+                </bis>
+            </zeitraum>
+        </ausbildung>
+        <typ>AUSBILDUNG</typ>
+    </werdegang>
+    <werdegang>
+        <beschreibung>HBT: Mitarbeiter</beschreibung>
+        <ausbildung>
+            <bezeichnung>
+                <hauptbegriff>
+                    <bezeichnung>HBT: Werksstudent</bezeichnung>
+                </hauptbegriff>
+            </bezeichnung>
+            <zeitraum>
+                <von>
+                    <tag>30</tag>
+                    <monat>9</monat>
+                    <jahr>2016</jahr>
+                </von>
+                <bis>
+                    <tag>30</tag>
+                    <monat>3</monat>
+                    <jahr>2017</jahr>
+                </bis>
+            </zeitraum>
+        </ausbildung>
+        <typ>BERUF</typ>
+    </werdegang>
+
+    <projekte>
+        <projektId>2</projektId>
+        <titel>Absolviertes Projekt</titel>
+        <rollen>
+            <bezeichnung>
+                <hauptbegriff>
+                    <bezeichnung>Eingenommene Rolle</bezeichnung>
+                </hauptbegriff>
+            </bezeichnung>
+        </rollen>
+        <kurzbeschreibung>Eine kurze Beschreibung des Projektes</kurzbeschreibung>
+        <endkunde>
+            <bezeichnung>Der Kunde</bezeichnung>
+        </endkunde>
+        <skills>
+            <bezeichnung>
+                <hauptbegriff>
+                    <bezeichnung>wichtiger Skill des Projektes</bezeichnung>
+                </hauptbegriff>
+            </bezeichnung>
+        </skills>
+        <zeitraum>
+            <von>
+                <tag>31</tag>
+                <monat>3</monat>
+                <jahr>2017</jahr>
+            </von>
+        </zeitraum>
+        <berater>Berater</berater>
+    </projekte>
+
+    <skills>
+        <bezeichnung>
+            <hauptbegriff>
+                <bezeichnung>wichtiger Skill des Projektes</bezeichnung>
+            </hauptbegriff>
+        </bezeichnung>
+        <level>
+            <level>5</level>
+        </level>
+        <gruppe>Skill Kategorie</gruppe>
+        <groupIndex>0</groupIndex>
+    </skills>
+    <skills>
+        <bezeichnung>
+            <hauptbegriff>
+                <bezeichnung>ein anderer Skill</bezeichnung>
+            </hauptbegriff>
+        </bezeichnung>
+        <level>
+            <level>1</level>
+        </level>
+        <gruppe>Skill Kategorie</gruppe>
+        <groupIndex>0</groupIndex>
+    </skills>
+    <skills>
+        <bezeichnung>
+            <hauptbegriff>
+                <bezeichnung>Skill aus anderer Kategorie</bezeichnung>
+            </hauptbegriff>
+        </bezeichnung>
+        <level>
+            <level>4</level>
+        </level>
+        <gruppe>Zweite Kategorie</gruppe>
+        <groupIndex>0</groupIndex>
+    </skills>
+
+
+    <profilRollen>
+        <bezeichnung>
+            <hauptbegriff>
+                <bezeichnung>Softwareentwickler</bezeichnung>
+            </hauptbegriff>
+        </bezeichnung>
+    </profilRollen>
+</profil>
