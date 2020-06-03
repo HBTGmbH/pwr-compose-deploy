@@ -139,6 +139,10 @@ services:
     ports:
       - 9007:9007
     environment:
+      DB_HOST: view_profile_service_db
+      DB_PORT: 6379
+      DB_DATABASE: 1
+      DB_PASSWORD: ${VIEW_PROFILE_DB_PASS}
       EUREKA_ENABLED: 'true'
       EUREKA_URL: http://pwr-discovery-service:8761/eureka
   watchtower: #watchtower auto-updates our containers; It checks every 5 minutes.
