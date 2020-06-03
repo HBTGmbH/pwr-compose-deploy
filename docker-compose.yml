@@ -54,7 +54,7 @@ services:
       DB_PASS: ${PROFILE_DB_PASS}
       DB_URL: jdbc:mariadb://pwr_mariaDb:3306/profile
       DB_DRIVER_CLASS_NAME: org.mariadb.jdbc.Driver
-      DB_HIBERNATE_DDL_AUTO: update
+      DB_HIBERNATE_DDL_AUTO: none
       EUREKA_ENABLED: 'true'
       EUREKA_URL: http://pwr-discovery-service:8761/eureka
       SERVER_PORT: 8080
@@ -85,7 +85,7 @@ services:
       DB_PASS: ${SKILL_DB_PASS}
       DB_URL: jdbc:mariadb://pwr_mariaDb:3306/skill
       DB_DRIVER_CLASS_NAME: org.mariadb.jdbc.Driver
-      DB_HIBERNATE_DDL_AUTO: update
+      DB_HIBERNATE_DDL_AUTO: none
       EUREKA_ENABLED: 'true'
       # Assuming usage of the default docker-compose file provided with discovery.
       # Change if necessary
@@ -123,7 +123,7 @@ services:
       DB_PASS: ${REPORT_DB_PASS}
       DB_URL: jdbc:mariadb://pwr_mariaDb:3306/report
       DB_DRIVER_CLASS_NAME: org.mariadb.jdbc.Driver
-      DB_HIBERNATE_DDL_AUTO: update
+      DB_HIBERNATE_DDL_AUTO: none
       EUREKA_ENABLED: 'true'
       EUREKA_URL: http://pwr-discovery-service:8761/eureka
       PWR_REPORT_FILE_PATH: /var/pwr
