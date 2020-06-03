@@ -98,7 +98,7 @@ services:
     ports:
       - 9008:9008
     environment:
-      DB_DATABASE: 6
+      DB_DATABASE: 4
       DB_PORT: 6379
       DB_HOST: view_profile_service_db
       SPRING_REDIS_PASSWORD: ${VIEW_PROFILE_DB_PASS}
