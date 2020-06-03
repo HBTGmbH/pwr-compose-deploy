@@ -66,12 +66,12 @@ services:
     ports:
       - 9080:80
     environment:
-      POWER_PROFILE_SERVICE_URL: http://power02.corp.hbt.de:9000/pwr-profile-service
-      POWER_SKILL_SERVICE_URL: http://power02.corp.hbt.de:9000/pwr-skill-service
-      POWER_VIEW_PROFILE_SERVICE_URL: http://power02.corp.hbt.de:9000/pwr-view-profile-service
-      POWER_REPORT_SERVICE_URL: http://power02.corp.hbt.de:9000/pwr-report-service
+      POWER_PROFILE_SERVICE_URL: https://power.hbt.de/api/pwr-profile-service
+      POWER_SKILL_SERVICE_URL: https://power.hbt.de/api/pwr-skill-service
+      POWER_VIEW_PROFILE_SERVICE_URL: https://power.hbt.de/api/pwr-view-profile-service
+      POWER_REPORT_SERVICE_URL: https://power.hbt.de/api/pwr-report-service
       POWER_STATISTICS_SERVICE_URL: https://power.hbt.de/power/api/pwr-statistics-service
-      POWER_LOCALE_PATH: http://power02.corp.hbt.de:80/localization
+      POWER_LOCALE_PATH: https://power.hbt.de/localization
       POWER_IMAGE_PATH: /img
     volumes:
       - "/var/www/data/img/profile_pictures:/usr/share/nginx/html/img/profile_pictures"
