@@ -9,8 +9,6 @@ services:
   pwr-edge-service:
     image: docker.pkg.github.com/hbtgmbh/pwr-edge-service/pwr-edge-service:master
     restart: 'always'
-    ports:
-      - "9000:8080"
     volumes:
       - pwr-log-files:/var/logs
     environment:
