@@ -5,8 +5,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     volumes:
       - ./conf/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
@@ -19,8 +19,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     environment:
       zuuk_sensitive_headers: Cookie,Set-Cookie
       security_basic_enabled: 'false'
@@ -44,8 +44,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     volumes:
       - pwr-log-files:/var/logs
   pwr_mariaDb:
@@ -56,8 +56,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     volumes:
@@ -68,8 +68,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     environment:
       DB_USER: ${PROFILE_DB_USER}
       DB_PASS: ${PROFILE_DB_PASS}
@@ -87,8 +87,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     environment:
       POWER_PROFILE_SERVICE_URL: https://power.hbt.de/power/api/pwr-profile-service
       POWER_SKILL_SERVICE_URL: https://power.hbt.de/power/api/pwr-skill-service
@@ -105,8 +105,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     environment:
       DB_USER: ${SKILL_DB_USER}
       DB_PASS: ${SKILL_DB_PASS}
@@ -125,8 +125,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     environment:
       DB_DATABASE: 4
       DB_PORT: 6379
@@ -143,8 +143,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     volumes:
       - "./conf/redis.conf:/usr/local/etc/redis/redis.conf"
       - "./rdb-data:/data"
@@ -154,8 +154,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     environment:
       DB_USER: ${REPORT_DB_USER}
       DB_PASS: ${REPORT_DB_PASS}
@@ -177,8 +177,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     environment:
       DB_HOST: view_profile_service_db
       DB_PORT: 6379
@@ -192,8 +192,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 20m
+        max-file: "5"
+        max-size: "20m"
     environment:
       REPO_USER: ${GITHUB_REPO_USER}
       REPO_PASS: ${GITHUB_REPORT_PASS} # access token with permissions package=read
