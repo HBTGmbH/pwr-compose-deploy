@@ -12,7 +12,7 @@ services:
     ports:
       - "80:80"
   pwr-edge-service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-edge-service/pwr-edge-service:master
+    image: docker.pkg.github.com/hbtgmbh/pwr-edge-service/pwr-edge-service:development
     restart: 'always'
     volumes:
       - pwr-log-files:/var/logs
@@ -38,7 +38,7 @@ services:
       security_config_url: ${SECURITY_CONFIG_URL}
       eureka_client_service-url_defaultZone: http://pwr-discovery-service:8761/eureka
   pwr-discovery-service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-discovery-service/pwr-discovery-service:master
+    image: docker.pkg.github.com/hbtgmbh/pwr-discovery-service/pwr-discovery-service:development
     ports:
       - "8761:8761"
     logging:
@@ -63,7 +63,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
   pwr_profile_service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-profile-service/pwr-profile-service:master
+    image: docker.pkg.github.com/hbtgmbh/pwr-profile-service/pwr-profile-service:development
     restart: 'always'
     logging:
       driver: "json-file"
@@ -82,7 +82,7 @@ services:
     depends_on:
       - pwr_mariaDb
   pwr_webclient:
-    image: docker.pkg.github.com/hbtgmbh/pwr-webclient/pwr-webclient:master
+    image: docker.pkg.github.com/hbtgmbh/pwr-webclient/pwr-webclient:development
     restart: 'always'
     logging:
       driver: "json-file"
@@ -90,17 +90,17 @@ services:
         max-file: "5"
         max-size: "20m"
     environment:
-      POWER_PROFILE_SERVICE_URL: https://power.hbt.de/power/api/pwr-profile-service
-      POWER_SKILL_SERVICE_URL: https://power.hbt.de/power/api/pwr-skill-service
-      POWER_VIEW_PROFILE_SERVICE_URL: https://power.hbt.de/power/api/pwr-view-profile-service
-      POWER_REPORT_SERVICE_URL: https://power.hbt.de/power/api/pwr-report-service
-      POWER_STATISTICS_SERVICE_URL: https://power.hbt.de/power/api/pwr-statistics-service
-      POWER_LOCALE_PATH: https://power.hbt.de/power/localization
+      POWER_PROFILE_SERVICE_URL: htts://power02.corp.hbt.de/api/pwr-profile-service
+      POWER_SKILL_SERVICE_URL: http://power02.corp.hbt.de/api/pwr-skill-service
+      POWER_VIEW_PROFILE_SERVICE_URL: http://power02.corp.hbt.de/api/pwr-view-profile-service
+      POWER_REPORT_SERVICE_URL: http://power02.corp.hbt.de/api/pwr-report-service
+      POWER_STATISTICS_SERVICE_URL: http://power02.corp.hbt.de/api/pwr-statistics-service
+      POWER_LOCALE_PATH: http://power02.corp.hbt.de/localization
       POWER_IMAGE_PATH: /power/img
     volumes:
       - "/var/www/data/img/profile_pictures:/usr/share/nginx/html/img/profile_pictures"
   pwr-skill-service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-skill-service/pwr-skill-service:master
+    image: docker.pkg.github.com/hbtgmbh/pwr-skill-service/pwr-skill-service:development
     restart: 'always'
     logging:
       driver: "json-file"
@@ -120,7 +120,7 @@ services:
     depends_on:
       - pwr_mariaDb
   pwr-view-profile-service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-view-profile-service/pwr-view-profile-service:master
+    image: docker.pkg.github.com/hbtgmbh/pwr-view-profile-service/pwr-view-profile-service:development
     restart: 'always'
     logging:
       driver: "json-file"
@@ -149,7 +149,7 @@ services:
       - "./conf/redis.conf:/usr/local/etc/redis/redis.conf"
       - "./rdb-data:/data"
   pwr_report_service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-report-service/pwr-report-service:master
+    image: docker.pkg.github.com/hbtgmbh/pwr-report-service/pwr-report-service:development
     restart: 'always'
     logging:
       driver: "json-file"
@@ -172,7 +172,7 @@ services:
     depends_on:
       - pwr_mariaDb
   statistics:
-    image: docker.pkg.github.com/hbtgmbh/pwr-statistics-service/pwr-statistics-service:master
+    image: docker.pkg.github.com/hbtgmbh/pwr-statistics-service/pwr-statistics-service:development
     restart: 'always'
     logging:
       driver: "json-file"
