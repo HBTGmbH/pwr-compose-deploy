@@ -96,7 +96,7 @@ services:
       POWER_REPORT_SERVICE_URL: http://power02.corp.hbt.de/api/pwr-report-service
       POWER_STATISTICS_SERVICE_URL: http://power02.corp.hbt.de/api/pwr-statistics-service
       POWER_LOCALE_PATH: http://power02.corp.hbt.de/localization
-      POWER_IMAGE_PATH: /power/img
+      POWER_IMAGE_PATH: /img
     volumes:
       - "/var/www/data/img/profile_pictures:/usr/share/nginx/html/img/profile_pictures"
   pwr-skill-service:
