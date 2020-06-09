@@ -90,7 +90,7 @@ services:
         max-file: "5"
         max-size: "20m"
     environment:
-      POWER_PROFILE_SERVICE_URL: htts://power02.corp.hbt.de/api/pwr-profile-service
+      POWER_PROFILE_SERVICE_URL: http://power02.corp.hbt.de/api/pwr-profile-service
       POWER_SKILL_SERVICE_URL: http://power02.corp.hbt.de/api/pwr-skill-service
       POWER_VIEW_PROFILE_SERVICE_URL: http://power02.corp.hbt.de/api/pwr-view-profile-service
       POWER_REPORT_SERVICE_URL: http://power02.corp.hbt.de/api/pwr-report-service
