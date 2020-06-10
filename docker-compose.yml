@@ -166,6 +166,9 @@ services:
       EUREKA_URL: http://pwr-discovery-service:8761/eureka
       PWR_REPORT_FILE_PATH: /var/pwr
       LOGGING_LEVEL_DE_HBT: 'DEBUG'
+      # Image location needs to contain a %s; %s is substituted for the initials to
+      # resolve the profile picture. Someone should definitely fix this...
+      EXPORT_IMGLOCATION: /var/pwr/images/foto_%s.jpg
     volumes:
       - ./report-data/datasource.xml:/var/pwr/xml/datasource.xml
       - /var/www/data/img/profile_pictures:/var/pwr/images # We need to mount the images because, for now, nginx has to deliver them, too
