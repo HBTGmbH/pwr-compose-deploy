@@ -49,7 +49,7 @@ services:
     volumes:
       - pwr-log-files:/var/logs
   pwr_mariaDb:
-    image: mariadb:latest
+    image: mariadb:10
     restart: 'always'
     ports:
       - 9010:3306
