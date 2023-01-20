@@ -1,0 +1,34 @@
+version: '3.4'
+services:
+  pwr_mariaDb:
+    image: mariadb:10
+    restart: 'always'
+    ports:
+      - "3306:3306"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "20m"
+    environment:
+      MYSQL_ROOT_PASSWORD: changeit
+    volumes:
+      - ./dev-init.sql:/docker-entrypoint-initdb.d/dev-init.sql
+      - db-data:/var/lib/mysql
+  view_profile_service_db:
+    image: redis:alpine
+    restart: 'always'
+    command: redis-server --requirepass changeit
+    ports:
+      - "6379:6379"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "20m"
+    volumes:
+      - "./conf/redis.conf:/usr/local/etc/redis/redis.conf"
+      - rdb-data:/data"
+volumes:
+  rdb-data: {}
+  db-data: {}
