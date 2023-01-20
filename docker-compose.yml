@@ -154,7 +154,7 @@ services:
       - /var/www/data/img/profile_pictures:/var/pwr/images # We need to mount the images because, for now, nginx has to deliver them, too
     depends_on:
       - pwr_mariaDb
-  statistics:
+  pwr-statistics-service:
     image: docker.pkg.github.com/hbtgmbh/pwr-statistics-service/pwr-statistics-service:master
     restart: 'always'
     logging:
