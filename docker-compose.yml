@@ -39,6 +39,7 @@ services:
       security_config_group_search_filter: ${SECURITY_CONFIG_GROUP_SEARCH_FILTER}
       security_config_role_prefix: ${SECURITY_CONFIG_ROLE_PREFIX}
       security_config_url: ${SECURITY_CONFIG_URL}
+      spring_security_oauth2_resourceserver_jwt_issuer-uri: ${OAUTH2_ISSUER_URI}
   pwr_mariaDb:
     image: mariadb:latest
     restart: 'always'
