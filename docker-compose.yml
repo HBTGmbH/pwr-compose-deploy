@@ -86,6 +86,8 @@ services:
       POWER_STATISTICS_SERVICE_URL: https://power.hbt.de/power/api/pwr-statistics-service
       POWER_LOCALE_PATH: https://power.hbt.de/power/localization
       POWER_IMAGE_PATH: /power/img
+      POWER_AZURE_TENANT_ID: ${POWER_AZURE_TENANT_ID}
+      POWER_AZURE_CLIENT_ID: ${POWER_AZURE_CLIENT_ID}
     volumes:
       - "/var/www/data/img/profile_pictures:/usr/share/nginx/html/img/profile_pictures"
   pwr-skill-service:
