@@ -27,20 +27,9 @@ services:
         max-file: "5"
         max-size: "20m"
     environment:
-      zuuk_sensitive_headers: Cookie,Set-Cookie
-      security_basic_enabled: 'false'
-      security_headers_frame: 'true'
       spring_application_name: pwr-edge-service
       spring_http_multipart_max_file_size: 16MB
       spring_http_multipart_max_request_size: 16MB
-      security_config_manager_dn: ${SECURITY_CONFIG_MANAGER_DN}
-      security_config_manager_password: ${SECURITY_CONFIG_MANAGER_PASSWORD}
-      security_config_user_search_base: ${SECURITY_CONFIG_USER_SEARCH_BASE}
-      security_config_user_search_filter: ${SECURITY_CONFIG_USER_SEARCH_FILTER}
-      security_config_group_search_base: ${SECURITY_CONFIG_GROUP_SEARCH_BASE}
-      security_config_group_search_filter: ${SECURITY_CONFIG_GROUP_SEARCH_FILTER}
-      security_config_role_prefix: ${SECURITY_CONFIG_ROLE_PREFIX}
-      security_config_url: ${SECURITY_CONFIG_URL}
       spring_security_oauth2_resourceserver_jwt_issuer-uri: ${OAUTH2_ISSUER_URI}
   pwr_mariaDb:
     image: mariadb:latest
