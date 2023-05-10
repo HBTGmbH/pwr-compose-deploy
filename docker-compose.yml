@@ -81,12 +81,12 @@ services:
         max-file: "5"
         max-size: "20m"
     environment:
-      POWER_PROFILE_SERVICE_URL: https://power.hbt.de/power/api/pwr-profile-service
-      POWER_SKILL_SERVICE_URL: https://power.hbt.de/power/api/pwr-skill-service
-      POWER_VIEW_PROFILE_SERVICE_URL: https://power.hbt.de/power/api/pwr-view-profile-service
-      POWER_REPORT_SERVICE_URL: https://power.hbt.de/power/api/pwr-report-service
-      POWER_STATISTICS_SERVICE_URL: https://power.hbt.de/power/api/pwr-statistics-service
-      POWER_LOCALE_PATH: https://power.hbt.de/power/localization
+      POWER_PROFILE_SERVICE_URL: https://${POWER_HOST}/power/api/pwr-profile-service
+      POWER_SKILL_SERVICE_URL: https://${POWER_HOST}/power/api/pwr-skill-service
+      POWER_VIEW_PROFILE_SERVICE_URL: https://${POWER_HOST}/power/api/pwr-view-profile-service
+      POWER_REPORT_SERVICE_URL: https://${POWER_HOST}/power/api/pwr-report-service
+      POWER_STATISTICS_SERVICE_URL: https://${POWER_HOST}/power/api/pwr-statistics-service
+      POWER_LOCALE_PATH: https://${POWER_HOST}/power/localization
       POWER_IMAGE_PATH: /power/img
       POWER_AZURE_TENANT_ID: ${POWER_AZURE_TENANT_ID}
       POWER_AZURE_CLIENT_ID: ${POWER_AZURE_CLIENT_ID}
