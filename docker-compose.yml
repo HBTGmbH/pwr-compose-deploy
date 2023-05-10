@@ -8,6 +8,8 @@ services:
       options:
         max-file: "5"
         max-size: "20m"
+    environment:
+      CERTBOT_EMAIL: ${CERTBOT_EMAIL}
     volumes:
       - ./conf/nginx:/etc/nginx/user_conf.d
       - ./letsencrypt:/etc/letsencrypt
