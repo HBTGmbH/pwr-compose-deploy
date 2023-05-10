@@ -9,7 +9,7 @@ services:
         max-file: "5"
         max-size: "20m"
     volumes:
-      - ./conf/nginx.conf:/etc/nginx/user_conf.d
+      - ./conf:/etc/nginx/user_conf.d
       - ./letsencrypt:/etc/letsencrypt
     ports:
       - "80:80"
