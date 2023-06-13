@@ -93,6 +93,8 @@ services:
       DB_URL: jdbc:mariadb://pwr_mariaDb:3306/skill
       DB_DRIVER_CLASS_NAME: org.mariadb.jdbc.Driver
       DB_HIBERNATE_DDL_AUTO: none
+    volumes:
+      - lucene-data:/lucene-data
     depends_on:
       - pwr_mariaDb
   pwr-view-profile-service:
@@ -175,3 +177,4 @@ services:
 volumes:
   pwr-log-files: {}
   db-data: {}
+  lucene-data: {}
