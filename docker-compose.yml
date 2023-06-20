@@ -31,6 +31,7 @@ services:
       spring_http_multipart_max_file_size: 16MB
       spring_http_multipart_max_request_size: 16MB
       spring_security_oauth2_resourceserver_jwt_issuer-uri: ${OAUTH2_ISSUER_URI}
+      TZ: 'Europe/Berlin'
   pwr_mariaDb:
     image: mariadb:11
     restart: 'always'
@@ -43,6 +44,7 @@ services:
         max-size: "20m"
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      TZ: 'Europe/Berlin'
     volumes:
       - db-data:/var/lib/mysql
   pwr-profile-service:
@@ -59,6 +61,7 @@ services:
       DB_URL: jdbc:mariadb://pwr_mariaDb:3306/profile
       DB_DRIVER_CLASS_NAME: org.mariadb.jdbc.Driver
       DB_HIBERNATE_DDL_AUTO: none
+      TZ: 'Europe/Berlin'
     depends_on:
       - pwr_mariaDb
   pwr_webclient:
@@ -93,6 +96,7 @@ services:
       DB_URL: jdbc:mariadb://pwr_mariaDb:3306/skill
       DB_DRIVER_CLASS_NAME: org.mariadb.jdbc.Driver
       DB_HIBERNATE_DDL_AUTO: none
+      TZ: 'Europe/Berlin'
     volumes:
       - lucene-data:/lucene-data
     depends_on:
@@ -110,6 +114,7 @@ services:
       DB_PORT: 6379
       DB_HOST: view_profile_service_db
       SPRING_REDIS_PASSWORD: ${VIEW_PROFILE_DB_PASS}
+      TZ: 'Europe/Berlin'
     depends_on:
       - view_profile_service_db
   view_profile_service_db:
@@ -143,6 +148,7 @@ services:
       # Image location needs to contain a %s; %s is substituted for the initials to
       # resolve the profile picture. Someone should definitely fix this...
       EXPORT_IMGLOCATION: /var/pwr/images/foto_%s.jpg
+      TZ: 'Europe/Berlin'
     volumes:
       - ./report-data/datasource.xml:/var/pwr/xml/datasource.xml
       - /var/www/data/img/profile_pictures:/var/pwr/images # We need to mount the images because, for now, nginx has to deliver them, too
