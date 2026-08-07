@@ -1,4 +1,3 @@
-version: '3.4'
 services:
   pwr-ingress:
     image: jonasal/nginx-certbot:latest
@@ -168,7 +167,7 @@ services:
       DB_DATABASE: 0
       DB_PASSWORD: ${VIEW_PROFILE_DB_PASS}
   watchtower: #watchtower auto-updates our containers; It checks every 5 minutes.
-    image: containrrr/watchtower
+    image: beatkind/watchtower
     restart: 'always'
     logging:
       driver: "json-file"
