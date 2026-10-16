@@ -47,7 +47,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
   pwr-profile-service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-profile-service/pwr-profile-service:master
+    image: ghcr.io/hbtgmbh/hbt-power/pwr-profile-service:main
     restart: 'always'
     logging:
       driver: "json-file"
