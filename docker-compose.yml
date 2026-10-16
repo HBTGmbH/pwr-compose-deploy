@@ -16,7 +16,7 @@ services:
       - "80:80"
       - "443:443"
   pwr-edge-service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-edge-service/pwr-edge-service:master
+    image: ghcr.io/hbtgmbh/hbt-power/pwr-edge-service:main
     restart: 'always'
     volumes:
       - pwr-log-files:/var/logs
@@ -64,7 +64,7 @@ services:
     depends_on:
       - pwr_mariaDb
   pwr_webclient:
-    image: docker.pkg.github.com/hbtgmbh/pwr-webclient/pwr-webclient:master
+    image: ghcr.io/hbtgmbh/hbt-power/pwr-webclient:main
     restart: 'always'
     logging:
       driver: "json-file"
@@ -82,7 +82,7 @@ services:
       POWER_AZURE_TENANT_ID: ${POWER_AZURE_TENANT_ID}
       POWER_AZURE_CLIENT_ID: ${POWER_AZURE_CLIENT_ID}
   pwr-skill-service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-skill-service/pwr-skill-service:master
+    image: ghcr.io/hbtgmbh/hbt-power/pwr-skill-service:main
     restart: 'always'
     logging:
       driver: "json-file"
@@ -101,7 +101,7 @@ services:
     depends_on:
       - pwr_mariaDb
   pwr-view-profile-service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-view-profile-service/pwr-view-profile-service:master
+    image: ghcr.io/hbtgmbh/hbt-power/pwr-view-profile-service:main
     restart: 'always'
     logging:
       driver: "json-file"
@@ -129,7 +129,7 @@ services:
       - "./conf/redis.conf:/usr/local/etc/redis/redis.conf"
       - "./rdb-data:/data"
   pwr-report-service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-report-service/pwr-report-service:master
+    image: ghcr.io/hbtgmbh/hbt-power/pwr-report-service:main
     restart: 'always'
     logging:
       driver: "json-file"
@@ -154,7 +154,7 @@ services:
     depends_on:
       - pwr_mariaDb
   pwr-statistics-service:
-    image: docker.pkg.github.com/hbtgmbh/pwr-statistics-service/pwr-statistics-service:master
+    image: ghcr.io/hbtgmbh/hbt-power/pwr-statistics-service:main
     restart: 'always'
     logging:
       driver: "json-file"
