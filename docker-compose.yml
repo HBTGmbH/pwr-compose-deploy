@@ -178,6 +178,21 @@ services:
     volumes:
       - ~/.docker/config.json:/config.json 
       - /var/run/docker.sock:/var/run/docker.sock
+  db-backup:
+    image: fradelg/mysql-cron-backup
+    volumes:
+      - ./pwr-backup:/backup
+    environment:
+      - MYSQL_HOST=pwr_mariaDb
+      - MYSQL_USER=root
+      - MYSQL_PASS=${DB_ROOT_PASSWORD}
+      - MAX_BACKUPS=30
+      - INIT_BACKUP=0
+      # Every day at 02:00
+      - CRON_TIME=0 2 * * *
+      # Make it small
+      - GZIP_LEVEL=9
+    restart: unless-stopped
 volumes:
   pwr-log-files: {}
   db-data: {}
