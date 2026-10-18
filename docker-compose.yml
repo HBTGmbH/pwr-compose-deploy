@@ -174,10 +174,8 @@ services:
       options:
         max-file: "5"
         max-size: "20m"
-    environment:
-      REPO_USER: ${GITHUB_REPO_USER}
-      REPO_PASS: ${GITHUB_REPORT_PASS} # access token with permissions package=read
     volumes:
+      - ~/.docker/config.json/config.json 
       - /var/run/docker.sock:/var/run/docker.sock
 volumes:
   pwr-log-files: {}
