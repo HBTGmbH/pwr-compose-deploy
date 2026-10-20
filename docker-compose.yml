@@ -59,7 +59,8 @@ services:
       DB_PASS: ${PROFILE_DB_PASS}
       DB_URL: jdbc:mariadb://pwr_mariaDb:3306/profile
       DB_DRIVER_CLASS_NAME: org.mariadb.jdbc.Driver
-      DB_HIBERNATE_DDL_AUTO: none
+      # Hibernate adds new tables and columns on start, never drops or changes any
+      DB_HIBERNATE_DDL_AUTO: update
       TZ: 'Europe/Berlin'
     depends_on:
       - pwr_mariaDb
@@ -94,7 +95,8 @@ services:
       DB_PASS: ${SKILL_DB_PASS}
       DB_URL: jdbc:mariadb://pwr_mariaDb:3306/skill
       DB_DRIVER_CLASS_NAME: org.mariadb.jdbc.Driver
-      DB_HIBERNATE_DDL_AUTO: none
+      # Hibernate adds new tables and columns on start, never drops or changes any
+      DB_HIBERNATE_DDL_AUTO: update
       TZ: 'Europe/Berlin'
     volumes:
       - lucene-data:/lucene-data
@@ -141,7 +143,8 @@ services:
       DB_PASS: ${REPORT_DB_PASS}
       DB_URL: jdbc:mariadb://pwr_mariaDb:3306/report
       DB_DRIVER_CLASS_NAME: org.mariadb.jdbc.Driver
-      DB_HIBERNATE_DDL_AUTO: none
+      # Hibernate adds new tables and columns on start, never drops or changes any
+      DB_HIBERNATE_DDL_AUTO: update
       LOGGING_LEVEL_DE_HBT: 'DEBUG'
       TZ: 'Europe/Berlin'
     volumes:
