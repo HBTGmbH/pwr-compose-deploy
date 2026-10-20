@@ -32,7 +32,8 @@ services:
       spring_security_oauth2_resourceserver_jwt_issuer-uri: ${OAUTH2_ISSUER_URI}
       TZ: 'Europe/Berlin'
   pwr_mariaDb:
-    image: mariadb:11
+    # Fixed minor version (LTS): updates only bring patch releases
+    image: mariadb:11.8
     restart: 'always'
     ports:
       - 9010:3306
@@ -43,6 +44,8 @@ services:
         max-size: "20m"
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      # On a version change the image runs mariadb-upgrade itself, after backing up the system tables
+      MARIADB_AUTO_UPGRADE: '1'
       TZ: 'Europe/Berlin'
     volumes:
       - db-data:/var/lib/mysql
