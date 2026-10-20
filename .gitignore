@@ -1,3 +1,7 @@
 .idea
 *.iml
 rdb-data/dump.rdb
+
+# Licensed font files, see fonts/README.md
+fonts/*
+!fonts/README.md

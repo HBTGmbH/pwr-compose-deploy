@@ -151,6 +151,8 @@ services:
     volumes:
       - ./report-data/datasource.xml:/var/pwr/xml/datasource.xml
       - /var/www/data/img/profile_pictures:/var/pwr/images # We need to mount the images because, for now, nginx has to deliver them, too
+      # HBT font Simplon Norm for PDFs (licensed, not in git, see fonts/README.md); empty: Noto Sans from the image
+      - ./fonts:/fonts:ro
     depends_on:
       - pwr_mariaDb
   pwr-statistics-service:
