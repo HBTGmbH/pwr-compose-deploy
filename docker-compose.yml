@@ -168,15 +168,16 @@ services:
       DB_PORT: 6379
       DB_DATABASE: 0
       DB_PASSWORD: ${VIEW_PROFILE_DB_PASS}
-  watchtower: #watchtower auto-updates our containers; It checks every 5 minutes.
-    image: beatkind/watchtower
+  watchtower: # auto-updates our containers: right at its start, then every 10 minutes
+    # Maintained fork with --update-on-start (beatkind/watchtower has no such option)
+    image: nickfedor/watchtower
     restart: 'always'
     logging:
       driver: "json-file"
       options:
         max-file: "5"
         max-size: "20m"
-    command: --interval 600 # every 10 minutes
+    command: --interval 600 --update-on-start
     volumes:
       - ~/.docker/config.json:/config.json 
       - /var/run/docker.sock:/var/run/docker.sock
