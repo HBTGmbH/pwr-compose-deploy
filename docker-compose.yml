@@ -196,6 +196,23 @@ services:
       # Make it small
       - GZIP_LEVEL=9
     restart: unless-stopped
+  redis-backup:
+    # The view profiles and report templates live in Redis, which the MariaDB backup above doesn't cover
+    # (HBTGmbH/hbt-power#251); restoring: REDIS-BACKUP.md
+    image: redis:alpine
+    entrypoint: ["sh", "/redis-backup.sh"]
+    volumes:
+      - ./conf/redis-backup.sh:/redis-backup.sh:ro
+      - ./pwr-backup/redis:/backup
+    environment:
+      REDIS_HOST: view_profile_service_db
+      REDISCLI_AUTH: ${VIEW_PROFILE_DB_PASS}
+      # Half an hour after the MariaDB backup (both in UTC), the same number of backups
+      BACKUP_TIME: '02:30'
+      MAX_BACKUPS: 30
+    depends_on:
+      - view_profile_service_db
+    restart: unless-stopped
 volumes:
   pwr-log-files: {}
   db-data: {}
