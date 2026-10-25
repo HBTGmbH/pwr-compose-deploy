@@ -5,3 +5,6 @@ rdb-data/dump.rdb
 # Licensed font files, see fonts/README.md
 fonts/*
 !fonts/README.md
+
+# Variables of the deployment (passwords, ids), never in this public repository
+.env
