@@ -1,6 +1,6 @@
 services:
   pwr-ingress:
-    image: jonasal/nginx-certbot:latest
+    image: caddy:2
     restart: "always"
     logging:
       driver: "json-file"
@@ -8,13 +8,15 @@ services:
         max-file: "5"
         max-size: "20m"
     environment:
-      CERTBOT_EMAIL: ${CERTBOT_EMAIL}
+      ACME_EMAIL: ${CERTBOT_EMAIL}
     volumes:
-      - ./conf/nginx:/etc/nginx/user_conf.d
-      - ./letsencrypt:/etc/letsencrypt
+      - ./conf/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data # certificates and ACME account; must persist to avoid Let's Encrypt rate limits
+      - caddy-config:/config
     ports:
       - "80:80"
       - "443:443"
+      - "443:443/udp" # HTTP/3
   pwr-edge-service:
     image: ghcr.io/hbtgmbh/hbt-power/pwr-edge-service:main
     restart: 'always'
@@ -219,3 +221,5 @@ volumes:
   pwr-log-files: {}
   db-data: {}
   lucene-data: {}
+  caddy-data: {}
+  caddy-config: {}

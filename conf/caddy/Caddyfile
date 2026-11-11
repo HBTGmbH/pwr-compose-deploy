@@ -1,0 +1,25 @@
+{
+	email {$ACME_EMAIL}
+}
+
+power.hbt.de {
+	encode gzip
+
+	request_body {
+		max_size 50MB
+	}
+
+	# Strips the /api prefix before proxying, like the old nginx "proxy_pass .../;"
+	handle_path /api/* {
+		reverse_proxy pwr-edge-service:9000 {
+			header_up X-Real-IP {remote_host}
+		}
+	}
+
+	handle {
+		header X-Frame-Options SAMEORIGIN
+		reverse_proxy pwr_webclient:80 {
+			header_up X-Real-IP {remote_host}
+		}
+	}
+}
